@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function coche(marca_in, modelo_in, Año_in) {
+            this.marca=marca_in;
+            this.modelo=modelo_in;
+            this.Año=Año_in
+        }
+        let coches= new Array(4);
+        coches[0]= new coche("Ferrari", "Scaglietta", "2010");
+        coches[1]= new coche("BMW", "Z4", "1998");
+        coches[2]= new coche("Seat", "Toledo", "2010");
+        coches[3]= new coche("Fiat", "Punto", "2006");
+
+        for(i=0;i<coches.length;i++){
+            document.write("<b> Marca </b>" + coches[i].marca + "- <b> Modelo </b>" 
+            + coches[i].modelo + "- <b> Año </b>" + coches[i].Año);
+        }
+
+
+    </script>
+    
+</body>
+</html>

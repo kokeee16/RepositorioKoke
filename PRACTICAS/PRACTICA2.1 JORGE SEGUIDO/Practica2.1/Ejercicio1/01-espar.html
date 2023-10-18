@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-espar.html Jorge Seguido</title>
+</head>
+<body>
+    <script>
+        // Aqui pedimos el numero al usuario
+        const num = prompt("Introduzca un número: ");
+
+        // Aqui vemos si lo que ingresamos es un numero
+        if (!isNaN(num)) {
+            // Aqui vemos si es numero es par o impar
+            if (num % 2 === 0) {
+                console.log(`El número ${num} es par.`);
+            } else {
+                console.log(`El número ${num} es impar.`);
+            }
+        } else {
+            console.log("El valor ingresado no es un número válido."); //Aqui vemos si lo que ingresamos es un numero o no
+        }
+    </script>
+    
+</body>
+</html>

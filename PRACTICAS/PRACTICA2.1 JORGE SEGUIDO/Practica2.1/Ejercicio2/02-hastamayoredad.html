@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-hastamayoresdeedad Jorge Seguido</title>
+</head>
+<body>
+    <script>
+    
+        let MayorDeEdad = false;
+
+        for (; !MayorDeEdad; ) {
+            // Aqui vemos que solicitamos la edad al usuario
+            const edad = prompt("Introduzca su edad: ");
+            
+            // Aqui comprobamos si la edad que hemos introducido es mayor o igual de 18 años o no
+            if (!isNaN(edad) && parseInt(edad) >= 18) {
+                MayorDeEdad = true;
+                console.log(" Eres mayor de 18 años ");
+            } else {
+                console.log("Introduzca otra edad: ");
+            }
+        }
+   
+</script>
+
+</body>
+</html>

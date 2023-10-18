@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="infor">
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sit, provident ipsum, doloremque in nulla aperiam
+        earum fuga impedit illo adipisci necessitatibus sunt vel quasi dolor quae, libero molestias debitis.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique explicabo vel pariatur officia velit
+        adipisci totam dignissimos perferendis aliquam nihil dolores aliquid, cupiditate doloremque, id ab tenetur
+        cumque quos sit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dignissimos deserunt at voluptatibus optio omnis
+        dolorum explicabo obcaecati eum incidunt cum fugit quas consectetur neque consequatur laborum autem magnam sit!
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            document.onkeydown = muestraInformacion;
+            document.onkeypress = muestraInformacion;
+            document.onkeyup = muestraInformacion
+        }
+
+        function muestraInformacion(evento) {
+            let evento = window.event || evento;
+            let mensaje = "Tipo de evento" + evento.type + "<br>" +
+                "Propiedad keyCode: " + evento.keyCode + "<br>" +
+                "Propiedad charCode " + evento.charCode + "<br>" +
+                "Caracter pulsado: " + evento.key;
+
+            info.innerHTML += "<br>--------------------------------------------</br>" + mensaje;
+        }
+
+    </script>
+</body>
+
+</html>

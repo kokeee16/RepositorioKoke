@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <script>
+        class Coche {
+            constructor(marca, modelo, precio, anoMatriculacion, url) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.precio = precio;
+                this.anoMatriculacion = anoMatriculacion;
+                this.url = url;
+            }
+        }
+
+        const coche1 = new Coche('Audi', 'R8', 20000, 2020, 'IMG/R8.jpeg');
+        const coche2 = new Coche('BMW', 'M8', 25000, 2019, 'IMG/M8.jpeg');
+        const coche3 = new Coche('CUPRA', 'SEAT LEON CUPRA', 18000, 2021, 'IMG/seat leonn cupra.jpg');
+        const coche4 = new Coche('MUSTANG', 'MUSTANG', 30000, 2018, 'IMG/mustang.jpeg');
+        const coche5 = new Coche('LAMBORGHINI', 'AVENTADOR', 22000, 2022, 'IMG/aventador.jpeg');
+
+        const listaCoches = [coche1, coche2, coche3, coche4, coche5];
+
+        function pintaCoches(coches) {
+            document.write('<div class="container">');
+            coches.forEach(coche => {
+                document.write('<div class="card" style="width: 18rem;">');
+                document.write('<img src="' + coche.url + '" class="card-img-top" alt="...">');
+                document.write('<div class="card-body">');
+                document.write('<h5 class="card-title">' + coche.marca + ' ' + coche.modelo + '</h5>');
+                document.write('<p class="card-text">Precio: ' + coche.precio + ' €</p>');
+                document.write('</div></div>');
+            });
+            document.write('</div>');
+        }
+
+        pintaCoches(listaCoches);
+
+    </script>
+</body>
+
+</html>

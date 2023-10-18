@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        function ImprimirDatos(){
+            document.write("Marca:"+this.marca);
+            document.write("<br>Modelo:"+this.modelo);
+            document.write("<br>Year:"+this.anno);
+        }
+
+        function coche(marca_in, modelo_in, anno_in) {
+            this.marca=marca_in;
+            this.modelo=modelo_in;
+            this.anno=anno_in;
+            this.imprimeDatos=ImprimirDatos;
+        }
+        let coches= new Array(4);
+        coches[0]= new coche("Ferrari", "Scaglietta", "2010");
+        coches[1]= new coche("BMW", "Z4", "1998");
+        coches[2]= new coche("Seat", "Toledo", "2010");
+        coches[3]= new coche("Fiat", "Punto", "2006");
+
+        for(i=0;i<coches.length;i++){
+            document.write("<b> Marca </b>" + coches[i].marca + "- <b> Modelo </b>" 
+            + coches[i].modelo + "- <b> Año </b>" + coches[i].anno);
+        }
+
+        let nuevo_coche=new coche("Seat","Ibiza","1998");
+        nuevo_coche.imprimeDatos();
+
+
+        const lenguajes = new Array('CSS','JavaScript','HTML','php');
+        const frameworks=new Array('Rec','Vue','Angular');
+        const tecnologia=lenguajes.concat(frameworks);
+        let miArray1=lenguajes.join(",");
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onmousedown="alert('Has pasado por encima del boton')">Pasar por encima</button>
+
+    <button id="btn1">Pulsame</button>
+    <button id="brn2">Entra y sal</button>
+    <button id="btn3">Ponte encima</button>
+    <button id="btn4">Coordenadas</button>
+
+    <label for="x">x</label>
+    <label for="y">y</label>
+    <input id="y" name ="y" type="text">
+
+
+    <script>
+        const btn1=document.querySelector('#btn1');
+        const btn2=document.querySelector('#btn2');
+        const btn3=document.querySelector('#btn3');
+        const btn4=document.querySelector('#btn4');
+
+        const inputX=document.querySelector=("#x");
+        const inputY=document.querySelector=("#y");
+
+        //METODO RECOMENDADO
+
+        btn1.addEventListener("click",function(evento){
+            console.log(evento);
+            alert("Has pulsado el baton");
+        });
+
+        btn1.addEventListener("mouseout",function(evento){
+            console.log(evento);
+            alert("Te has marchado del baton");
+        });
+
+        //METODOS MÁS ANTIGUOS
+
+        btn3.onmouseover=function(evento){
+            console.log(evento);
+            alert("te has puesto encima del boton");
+        }
+
+        //METODO PRO
+
+        btn4.addEventListener("click",e=>{
+            console.log(e);
+            console.log(`X:${e.page},Y:${e.pagey}`);
+            inputX.values=e.pageX;
+            inputY.values=e.pageY;
+        });
+
+        function coordenadas(x,y){
+            inputX.value=x;
+            inputY.value=y;
+        }
+        document.addEventListener("mousemove",e=>{
+            coordenadas(e.pageX,e.pageY);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aleatorio</title>
+  <style>
+    table {
+      width: 70%; /* Ajusta el ancho de la tabla según tus necesidades */
+      border: 1px solid black;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <table align="center" border="2" >
+    <thead>
+      <tr>
+        <th>Premio</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+         const numeroAleatorio = (maximo) => {
+      return Math.round(Math.random() * maximo);
+    }
+
+    let premios = [];
+    for (let i = 0; i < 10; i++) {
+      premios.push(numeroAleatorio(99999));
+    }
+        for (let i = 0; i < premios.length; i++) {
+          document.write(`<tr>
+                            <td>Premio ${i + 1}</td>
+                            <td>${premios[i]}</td>
+                          </tr>`);
+        }
+      </script>
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-tablamult.html Jorge Seguido</title>
+</head>
+
+<body>
+    <script>
+
+      
+        var numero = prompt("Por favor, ingresa un número:");
+
+        
+        numero = numero.trim();
+
+        
+        if (isNaN(numero) || numero < 0) {
+            console.warn("El número ingresado no es válido. Por favor, ingresa un número mayor o igual a 0.");
+        } else {
+            // Generar tabla de multiplicar
+            for (var i = 1; i <= 10; i++) {
+                console.log(numero + " x " + i + " = " + (numero * i));
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const sumaArray = (numeros) => {
+            let suma = 0;
+            for (let i = 0; i < numeros.length; i++) {
+                suma += numeros[i];
+            }
+            return suma;
+        };
+
+        // Ejemplo de uso
+        const numeros = [1, 2, 3, 4, 5];
+        const resultado = sumaArray(numeros);
+        document.write("El resultado es: "+resultado); // Esto imprimirá 15, que es la suma de todos los números en el array.
+
+
+    </script>
+</body>
+
+</html>

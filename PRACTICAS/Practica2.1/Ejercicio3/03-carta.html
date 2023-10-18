@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-carta.html Jorge Seguido</title>
+</head>
+
+<body>
+    <script>
+       
+        var nombre = prompt("Por favor, ingresa tu nombre:");
+        var curso = prompt("Por favor, ingresa el nombre del curso:");
+        var localidad = prompt("Por favor, ingresa la localidad:");
+        var fechaInicio = prompt("Por favor, ingresa la fecha de inicio:");
+        var fechaFin = prompt("Por favor, ingresa la fecha de fin:");
+
+        // Aqui quitamos los espacios en blanco
+        nombre = nombre.trim();
+        curso = curso.trim();
+        localidad = localidad.trim();
+        fechaInicio = fechaInicio.trim();
+        fechaFin = fechaFin.trim();
+
+        
+        var carta = "Estimado " + nombre + ",\n\n";
+        carta += "Bienvenido al curso de " + curso + " que se celebrará en la localidad de " + localidad + " entre las fechas " + fechaInicio + " y " + fechaFin + ". Espero que el curso se desarrolle según sus expectativas. Estaremos encantados de atenderle.\n\n";
+        carta += "Atentamente,\n";
+        carta += "La dirección.";
+
+       
+        console.log(carta);
+    </script>
+
+</html>
