@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+const ingURL=""
+        const contenido = documnet.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+        const url = '/user.json'
+
+        async function fetchUserJSON(){
+            const response = await fetch("./user.json");
+            const user = await response.json();
+            return user;
+        }
+
+        btn.addEventListener("click", e => {
+                fetchUserJSON().then(user =>{
+                    console.log(user);
+                    contenido.innerHTML = user.nombre;
+                })
+                    
+                });
+        
+    </script>
+</body>
+</html>

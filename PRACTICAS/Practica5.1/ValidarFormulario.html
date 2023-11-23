@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VALIDACION DE UN FORMULARIO</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+    h2 {
+        text-align: center;
+    }
+    #myForm {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"] {
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .error-message {
+        color: red;
+        margin-top: 5px;
+    }
+    button[type="submit"] {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h2>Formulario</h2>
+    
+  
+    <form id="myForm">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <div id="nombreError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            <div id="apellidosError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required>
+            <div id="dniError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="emailError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            <div id="fechaNacimientoError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+            <div id="telefonoError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="tarjetaCredito">Número de Tarjeta de Crédito:</label>
+            <input type="text" id="tarjetaCredito" name="tarjetaCredito" required>
+            <div id="tarjetaCreditoError" class="error-message"></div>
+        </div>
+
+        <div>
+            <label for="password">Contraseña (8-10 caracteres, al menos un dígito o alfanumérico):</label>
+            <input type="password" id="password" name="password" required>
+            <div id="passwordError" class="error-message"></div>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function (event) {
+            let valid = true;
+
+            // Validación de nombre y apellidos (solo letras y espacios)
+            const nameValido = /^[a-zA-Z ]+$/;
+            const nombre = document.getElementById('nombre');
+            const apellidos = document.getElementById('apellidos');
+            const nombreError = document.getElementById('nombreError');
+            const apellidosError = document.getElementById('apellidosError');
+            if (!nameValido.test(nombre.value)) {
+                nombreError.textContent = 'El nombre no puede contener números';
+                valid = false;
+            } else {
+                nombreError.textContent = '';
+            }
+            if (!nameValido.test(apellidos.value)) {
+                apellidosError.textContent = 'El apellido no puede contener números';
+                valid = false;
+            } else {
+                apellidosError.textContent = '';
+            }
+
+            // Validación de DNI (8 números y una letra)
+            const dniValido = /^\d{8}[a-zA-Z]$/;
+            const dni = document.getElementById('dni');
+            const dniError = document.getElementById('dniError');
+            if (!dniValido.test(dni.value)) {
+                dniError.textContent = 'El formato del DNI debe contener 8 letras y un numero';
+                valid = false;
+            } else {
+                dniError.textContent = '';
+            }
+
+            // Validación de correo electrónico (8 caracteres antes del @)
+            const emailValido = /^[a-zA-Z0-9]{8}@.+$/;
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            if (!emailValido.test(email.value)) {
+                emailError.textContent = 'El formato del Email debe contener 8 caracteres de nombre';
+                valid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Validación de fecha de nacimiento
+            const fechaNacimiento = document.getElementById('fechaNacimiento');
+            const fechaNacimientoError = document.getElementById('fechaNacimientoError');
+            // Puedes agregar una validación más específica aquí si es necesario
+            if (!fechaNacimiento.value) {
+                fechaNacimientoError.textContent = 'Fecha de nacimiento no válida';
+                valid = false;
+            } else {
+                fechaNacimientoError.textContent = '';
+            }
+
+            // Validación de número de teléfono (9 dígitos)
+            const telefonoValido = /^\d{9}$/;
+            const telefono = document.getElementById('telefono');
+            const telefonoError =document.getElementById('telefonoError');
+            if (!telefonoValido.test(telefono.value)) {
+                  telefonoError.textContent = 'Número de teléfono no válido' ;
+                valid = false;
+            } else {
+                telefonoError.textContent = '' ;
+            }
+
+            // Validación de número de tarjeta de crédito (16 dígitos)
+            const tarjetaCreditoValido = /^[0-9]{16}$/;
+            const tarjetaCredito = document.getElementById('tarjetaCredito');
+            const tarjetaCreditoError =document.getElementById('tarjetaCreditoError');
+            if (!tarjetaCreditoValido.test(tarjetaCredito.value)) {
+                tarjetaCreditoError.textContent= 'Número de tarjeta de crédito no válido';
+                valid = false;
+
+            } else {
+                tarjetaCreditoError.textContent = '';
+            }
+
+            // Validación de contraseña (8-10 caracteres, al menos un dígito)
+            const passwordValido = /^(?=.*\d)[a-zA-Z\d]{8,10}$/;
+            const password = document.getElementById('password') ;
+            const passwordError = document.getElementById('passwordError');
+            if (!passwordValido.test(password.value)) {
+                passwordError.textContent = 'La contraseña debe contener de 8 a 10 caracteres y al menos un digito';
+            valid = false;
+
+            } else {
+             passwordError.textContent = '';
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+
+        });
+
+
+    </script>
+</body>
+</html>

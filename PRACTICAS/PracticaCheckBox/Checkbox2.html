@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Checkboxes</title>
+</head>
+
+<body>
+
+    <!--CON EVENTOS-->
+    <input type="checkbox" id="checkbox1" checked> Checkbox 1
+    <input type="checkbox" id="checkbox2" checked> Checkbox 2
+    <input type="checkbox" id="checkbox3" checked> Checkbox 3
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        function handleCheckboxChange(event) {
+            checkboxes.forEach(checkbox => {
+                if (checkbox !== event.target) {
+                    checkbox.checked = false;
+                }
+            });
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', handleCheckboxChange);
+        });
+    </script>
+</body>
+
+</html>

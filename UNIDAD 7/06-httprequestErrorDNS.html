@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01-estilo.css"> <!-- Enlace al archivo de estilos CSS -->
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">GET</button>
+    </div>
+    <script>
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "http://noexiste.dom/user.json");
+        xhr.setRequestHeader("Accept", "application/json");
+
+        xhr.addEventListener("load", function () {
+            if (xhr.status === 200) {
+                const user = JSON.parse(this.responseText);
+                contenido.innerHTML = user.nombre;
+            } else {
+                contenido.innerHTML = "Ocurrió un error durante la solicitud. Código de estado: " + xhr.status;
+            }
+        });
+
+        xhr.addEventListener("error", function () {
+            contenido.innerHTML = "Error de DNS. Por favor, verifica tu conexión a internet o la URL del recurso.";
+        });
+
+        btn.addEventListener("click", function () {
+            xhr.send();
+        });
+
+    </script>
+</body>
+
+</html>

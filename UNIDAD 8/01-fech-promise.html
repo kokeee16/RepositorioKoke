@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        const ingURL=""
+        const contenido = documnet.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+        const url = '/user.json'
+
+        btn.addEventListener("click", e => {
+            fetch(url)
+                .then(response => {
+                    return reponse.json()
+                })
+                .then((data) => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.log("hubo un error: " + error.message)
+                });
+        });
+    </script>
+    
+</body>
+</html>

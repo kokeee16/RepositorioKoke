@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Establece la codificación de caracteres -->
+    <meta charset="utf-8">
+    <!-- Especifica el autor del documento -->
+    <meta name="author" content="Kodinger">
+    <!-- Configura la escala inicial para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Establece el título de la página -->
+    <title>Mi Página de Inicio de Sesión</title>
+    <!-- Enlace al archivo de estilo de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Enlace al archivo de estilo personalizado -->
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+</head>
+
+<body class="my-login-page">
+    <!-- Sección que ocupa el 100% de la altura de la ventana -->
+    <section class="h-100">
+        <!-- Contenedor principal -->
+        <div class="container h-100">
+            <!-- Fila con alineación y centrado vertical -->
+            <div class="row justify-content-md-center align-items-center h-100">
+                <!-- Tarjeta que envuelve el contenido -->
+                <div class="card-wrapper">
+                    <!-- Logotipo o marca -->
+                    <div class="brand">
+                        <img src="./img/LOGO.png" alt="logo">
+                    </div>
+                    <!-- Contenido principal de la tarjeta -->
+                    <div class="card fat">
+                        <!-- Cuerpo de la tarjeta -->
+                        <div class="card-body">
+                            <!-- Título de la tarjeta con alineación al centro -->
+                            <h4 class="card-title" align="center">Please sign in</h4>
+                            <!-- Formulario de inicio de sesión -->
+                            <form id="loginForm" method="POST" action="./blog.html" class="my-login-validation" novalidate="">
+                                <!-- Campo de entrada para el correo electrónico -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="email" name="email" required>
+                                    <!-- Mensaje de retroalimentación para entradas inválidas -->
+                                    <div class="invalid-feedback">
+                                        El correo electrónico no es válido
+                                    </div>
+                                </div>
+
+                                <!-- Campo de entrada para la contraseña -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="password" name="password" required>
+                                    <!-- Mensaje de retroalimentación para entradas inválidas -->
+                                    <div class="invalid-feedback">
+                                        La contraseña es requerida
+                                    </div>
+                                </div>
+
+                                <!-- Casilla de verificación "Recuérdame" -->
+                                <div class="form-group">
+                                    <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" name="remember" id="remember" class="custom-control-input">
+                                        <label for="remember" class="custom-control-label">Recuérdame</label>
+                                    </div>
+                                </div>
+
+                                <!-- Grupo de formulario para el botón de inicio de sesión -->
+                                <div class="form-group text-center mt-3">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Iniciar Sesión
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Pie de la tarjeta -->
+                    <div class="footer">
+                        Derechos de Autor &copy; 2023 &mdash; JORGE SEGUIDO PANTOJA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclusión de scripts de jQuery y Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Inclusión del script personalizado Login.js -->
+    <script src="./JS/Login.js"></script>
+</body>
+
+</html>

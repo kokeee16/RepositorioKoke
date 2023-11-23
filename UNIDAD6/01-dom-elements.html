@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <p>Parrafo 3</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",e =>){
+            console.log(document);
+
+            //acceder al elemento raiz
+            const objHTML = document.documentElement;
+
+            // el primer hijo de dicho objeto seria el HEAD
+            const objHead = objHTML.firstChild;
+            // el ultimo objeto seria el body
+            const objBody = objHTML.lastChild;
+
+            const hijosHead = objHead.childNodes;
+            const numHijoHead = objHead.childNodes.length;
+
+            console.log(objHTML);
+        }
+
+
+
+
+    </script>
+</body>
+</html>
